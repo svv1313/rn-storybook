@@ -11,13 +11,13 @@ addDecorator(withKnobs);
 
 // import stories
 configure(() => {
-  require('./stories');
+  require('./stories/Button.stories');
 }, module);
 
 // Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters
 // To find allowed options for getStorybookUI
 const StorybookUIRoot = getStorybookUI({
-  asyncStorage: require('@react-native-async-storage/async-storage').default
+  asyncStorage: require('@react-native-async-storage/async-storage').default,
 });
 
 // If you are using React Native vanilla and after installation you don't see your app name here, write it manually.
