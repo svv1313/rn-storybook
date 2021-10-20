@@ -8,8 +8,9 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "storybook": "start-storybook",
-    "build-storybook": "build-storybook"
+    "storybook": "adb reverse tcp:7007 tcp:7007 && start-storybook",
+    "build-storybook": "build-storybook",
+    "prestorybook": "rnstl"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.9",
@@ -33,9 +34,18 @@
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.2",
     "react-dom": "17.0.2",
+    "react-native-storybook-loader": "^2.0.4",
     "react-test-renderer": "17.0.2"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "config": {
+    "react-native-storybook-loader": {
+      "searchDir": [
+        "./storybook"
+      ],
+      "pattern": "**/*.stories.js"
+    } 
   }
 }
